@@ -40,6 +40,7 @@ public class Controller {
     }
 
     public void plus() {
+        
         double[][] matrix1 = arraySign(matriceOneRows, matriceOneColumns, matriceOne);
         double[][] matrix2 = arraySign(matriceTwoRows, matriceTwoColumns, matriceTwo);
 
@@ -60,15 +61,22 @@ public class Controller {
         double[][] matrix1 = arraySign(matriceOneRows, matriceOneColumns, matriceOne);
         double[][] matrix2 = arraySign(matriceTwoRows, matriceTwoColumns, matriceTwo);
 
-        results.setText( matrixRead(Matrix.multiply(matrix1,matrix2)));
+        try {
+            results.setText( matrixRead(Matrix.multiply(matrix1,matrix2)));
+        } catch (RuntimeException e) {
+            results.setText(e.getMessage());
+        }
     }
 
     public void square() {
         double[][] matrix1 = arraySign(matriceOneRows, matriceOneColumns, matriceOne);
 
-        results.setText(matrixRead(Matrix.multiply(matrix1,matrix1)));
+        try {
+            results.setText(matrixRead(Matrix.multiply(matrix1, matrix1)));
+        } catch (RuntimeException exception) {
+            results.setText(exception.getMessage());
+        }
     }
-
     public static double[][] arraySign(Spinner<Integer> matrixRows, Spinner<Integer> matrixColumns, TextArea matrixContent) {
         StringBuilder nums = new StringBuilder();
         nums.append(matrixContent);
@@ -90,7 +98,7 @@ public class Controller {
             counter++;
             matrix[columnNumber - 1][indexHolder] = vars;
             indexHolder++;
-            if (columnNumber * matrixRows.getValue() - counter == 0) {
+            if (columnNumber * matrixColumns.getValue() - counter == 0) {
                 columnNumber++;
                 indexHolder = 0;
             }
