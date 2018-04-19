@@ -40,7 +40,7 @@ public class Controller {
     }
 
     public void plus() {
-        
+
         double[][] matrix1 = arraySign(matriceOneRows, matriceOneColumns, matriceOne);
         double[][] matrix2 = arraySign(matriceTwoRows, matriceTwoColumns, matriceTwo);
 

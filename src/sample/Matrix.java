@@ -2,6 +2,7 @@ package sample;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class Matrix {
 
@@ -44,17 +45,13 @@ public class Matrix {
 
     public static List<Double> getNumbers(String s) {
         List<Double> l = new ArrayList<>();
+        String[] spitted;
+        StringTokenizer stringTokenizer = new StringTokenizer(s);
+        for(int i=0; stringTokenizer.hasMoreTokens(); i++)
+            l.add(Double.parseDouble(stringTokenizer.nextToken()));
 
-        for (int i = 0; i < s.length(); i++) {
-            if (Character.isDigit(s.charAt(i))) {
-                String  num = "";
-                while (i < s.length() && Character.isDigit(s.charAt(i))) {
-                    num += s.charAt(i++);
-                }
-                l.add(Double.parseDouble(num));
-            }
-        }
         return l;
     }
 }
+
 

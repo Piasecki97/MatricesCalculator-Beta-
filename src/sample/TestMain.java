@@ -40,9 +40,10 @@ public class TestMain {
 
 
     public static void main(String[] args) {
-        String s = "2 3 4 1 2 3";
+        String s = "2 3 4 1 -2 3, -32";
 
         Controller.matrixRead(arraySign(2,3,s));
+        Matrix.getNumbers(s);
     }
 }
 
