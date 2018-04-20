@@ -112,10 +112,9 @@ public class Controller {
         StringBuilder s = new StringBuilder();
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[i].length; j++){
-                System.out.println(i);
-                System.out.println(j);
                 System.out.println(matrix[i][j]);
-                s.append(matrix[i][j] + "\t" + "|" + "\t");
+                s.append(matrix[i][j]);
+                s.append('\t');
             }
             s.append("\n");
         }

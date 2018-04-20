@@ -45,11 +45,10 @@ public class Matrix {
 
     public static List<Double> getNumbers(String s) {
         List<Double> l = new ArrayList<>();
-        String[] spitted;
         StringTokenizer stringTokenizer = new StringTokenizer(s);
-        for(int i=0; stringTokenizer.hasMoreTokens(); i++)
+        while(stringTokenizer.hasMoreTokens()) {
             l.add(Double.parseDouble(stringTokenizer.nextToken()));
-
+        }
         return l;
     }
 }
