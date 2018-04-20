@@ -37,10 +37,11 @@
     <bottom>
         <HBox alignment="CENTER">
             <Label text="Operations" />
-            <Button fx:id="plusButton" text="plus" onAction="#plus"/>
-            <Button fx:id="minusButton" text="minus" onAction="#minus"/>
-            <Button fx:id="timesButton" text="times" onAction="#times"/>
-            <Button fx:id="squareButton" text="square" onAction="#square"/>
+            <Button text="plus" onAction="#plus"/>
+            <Button text="minus" onAction="#minus"/>
+            <Button text="times" onAction="#times"/>
+            <Button text="square" onAction="#square"/>
+            <Button  text="determinant" onAction="#determinant"/>
         </HBox>
 
     </bottom>

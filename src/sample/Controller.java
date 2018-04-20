@@ -77,6 +77,19 @@ public class Controller {
             results.setText(exception.getMessage());
         }
     }
+
+    public void determinant() {
+        double[][] matrix1 = arraySign(matriceOneRows, matriceOneColumns, matriceOne);
+
+        try{
+            StringBuilder s = new StringBuilder();
+            s.append(Matrix.matrixDeterminant(matrix1));
+            String result = s.toString();
+            results.setText(result);
+        } catch (RuntimeException exept){
+            results.setText(exept.getMessage());
+        }
+    }
     public static double[][] arraySign(Spinner<Integer> matrixRows, Spinner<Integer> matrixColumns, TextArea matrixContent) {
         StringBuilder nums = new StringBuilder();
         nums.append(matrixContent);
